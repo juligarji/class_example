@@ -1,0 +1,33 @@
+<div class = "container">
+	<div class = "col xl8 l8 m8 s8 offset-xl2 offset-l2 offset-m2 offset-s2 center z-depth-3 gray">
+		<h4>Implementacion de gema Devise</h4>
+<p>Universidad Nacional de Colombia</p>
+		<ul>
+		  <% if user_signed_in?%>
+		  <li>
+		    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+			<script>
+				alertify
+  .alert("Sesion Abierta", function(){
+    alertify.message('OK');
+  });
+			</script>
+		  </li>
+		  <li>
+		    <%= current_user.email %>
+		  </li>
+
+
+		    <% else %>
+		    <li>
+		      <%= link_to "Ingresar", new_user_session_path %>
+		    </li>
+		    <li>
+		      <%= link_to "Registrarse", new_user_registration_path %>
+		    </li>
+		  <% end %>
+		</ul>
+	</div>
+</div>
+
+
